@@ -11,22 +11,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#!/view1">view1</a></li>
-    <li><a href="#!/view2">view2</a></li>
-  </ul>
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-  <div ng-view></div>
+<div class="container">    
+  <div class='form-signin'><h1><strong>Track Your Life Goals</strong></h1></div>
+  <div id='signup' class='form-signin'>
+    <h2 class="form-signin-heading"><strong>Please sign up</strong></h2>
+    <input id='username' class='form-control' type='text' placeholder='Username' ng-model='username'  required></input>
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email" ng-model='email' required autofocus>
+    <input id='firstname' class='form-control' type='text' placeholder='First Name' ng-model='firstname' required></input>
+    <input id='lastname' class='form-control' type='text' placeholder='Last Name' ng-model='lastname' required></input>
+    <input id='password' class='form-control' type='password' placeholder='Password' ng-model='password' required></input>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="register()">Register</button>
+  </div>
+  <div class="form-signin">
+    <h2 class="form-signin-heading"><strong>Please sign in</strong></h2>
+    <label for="inputUsername" class="sr-only">Email address</label>
+    <input id="inputUsername" class="form-control" placeholder="username" ng-model='username' required autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" ng-model='password' required>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="login()">Sign in</button>
+  </div>
+</div>
 
-  <div>Angular seed app: v<span app-version></span></div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -34,10 +56,14 @@
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
+  <script src="auth/auth.js"></script>
+  <script src="user/user.js"></script>
   <script src="view2/view2.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </body>
 </html>
