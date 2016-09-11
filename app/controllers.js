@@ -17,6 +17,7 @@
     }]);
     myApp
     .controller('auth', function($rootScope, $scope, $http) {
+
         $scope.register = function(){
             var url = base_url + '/register/';
             console.log("data:" , $scope);
@@ -29,7 +30,19 @@
                 .error(function (data, status, header, config) {
                     console.log("error:" , data);
                 });
+        };
 
+        $scope.showLogin = function(state){
+            var loginDiv = document.getElementById('login');
+            var registerDiv = document.getElementById('register');
+            if(state){
+                loginDiv.style.display = 'block';
+                registerDiv.style.display = 'none';
+            }
+            else{
+                loginDiv.style.display = 'none';
+                registerDiv.style.display = 'block';
+            }
         };
     });
 })();

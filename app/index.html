@@ -21,33 +21,36 @@
   <script src="../bower_components/angular-route/angular-route.js"></script>
   <script src="app.js"></script>
   <script src="controllers.js"></script>
+  <script src="index.js"></script>
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
 <div class="container" ng-controller="auth">    
   <div class='form-signin'><h1><strong>Track Your Life Goals</strong></h1></div>
-  <div id='signup' class='form-signin'>
+  <div id='register' class='form-signin'>
     <h2 class="form-signin-heading"><strong>Please sign up</strong></h2>
     <input id='username' class='form-control' type='text' placeholder='Username' ng-model='user.username'  required></input>
     <input type="email" id="inputEmail" class="form-control" placeholder="Email" ng-model='user.email' required autofocus>
     <input id='firstname' class='form-control' type='text' placeholder='First Name' ng-model='user.first_name' required></input>
     <input id='lastname' class='form-control' type='text' placeholder='Last Name' ng-model='user.last_name' required></input>
     <input id='password' class='form-control' type='password' placeholder='Password' ng-model='user.password' required></input>
-    <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="register()">Register</button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="register()">Sign Up</button>
+    <div class="elem-margin"> Already registered? <button class="btn btn-success" ng-click=showLogin(true)> Sign In </button></div>
   </div>
-  <div class="form-signin">
+  <div id='login' class="form-signin">
     <h2 class="form-signin-heading"><strong>Please sign in</strong></h2>
     <label for="inputUsername" class="sr-only">Email address</label>
-    <input id="inputUsername" class="form-control" placeholder="username" ng-model='user.username' required autofocus>
+    <input id="inputUsername" class="form-control" placeholder="Username" ng-model='user.username' required autofocus>
     <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="user.Password" ng-model='password' required>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" ng-model='user.password' required>
     <div class="checkbox">
       <label>
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div>
     <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="login()">Sign in</button>
+    <div class='elem-margin'> Not yet registered? <button class="btn btn-success" ng-click=showLogin(false)> Sign Up </button></div>
   </div>
 </div>
 
