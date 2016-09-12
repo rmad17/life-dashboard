@@ -44,5 +44,19 @@
                 registerDiv.style.display = 'block';
             }
         };
+    })
+    .controller('goals', function($rootScope, $scope, $http) {
+
+        $scope.register = function(){
+            var url = base_url + '/register/';
+            $http.post(url, data)
+                .success(function (data, status, headers, config) {
+                    console.log("success:" , data.data);
+                    $window.sessionStorage.token = data.token;
+                })
+                .error(function (data, status, header, config) {
+                    console.log("error:" , data);
+                });
+        };
     });
 })();
