@@ -33,7 +33,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-<div class="container" ng-controller="auth">    
+<div id='authDiv' class="container" ng-controller="auth">    
   <div class='form-signin'><h1><strong>Track Your Life Goals</strong></h1></div>
   <div id='register' class='form-signin'>
     <h2 class="form-signin-heading"><strong>Please sign up</strong></h2>
@@ -59,6 +59,18 @@
     <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="login()">Sign in</button>
     <div class='elem-margin'> Not yet registered? <button class="btn btn-success" ng-click=showLogin(false)> Sign Up </button></div>
   </div>
+</div>
+
+<div id='userDiv' class='container' ng-controller='userController'>
+  <div id='goalsDiv' >
+    Welcome {{first_name}}    
+    <br>
+    <ul>
+      <li ng-repeat="goal in goals.goals">
+        <span> {{ goal.title }}  || {{ goal.target_date }} </span>
+      </li>
+    </ul>
+  </div> 
 </div>
 
   <!-- In production use:

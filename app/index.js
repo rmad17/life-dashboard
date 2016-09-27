@@ -6,5 +6,8 @@
  */
 window.onload = function() {
     var registerDiv = document.getElementById('register');
+    var authDiv = document.getElementById('authDiv');
+    var userDiv = document.getElementById('userDiv');
     registerDiv.style.display = 'none';
+    userDiv.style.display = 'none';
 };
