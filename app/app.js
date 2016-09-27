@@ -2,12 +2,15 @@
 (function(){
     angular.module('myApp', [
         'ui.bootstrap',
-        'myApp.user',
         'ngRoute',
         'myApp.version'
     ]).
-    config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-        $locationProvider.hashPrefix('!');
-        $routeProvider.otherwise({redirectTo: '/app'});
+    config(['$routeProvider', function($routeProvider) {
+        $routeProvider
+            .when('/details', {
+                templateUrl: 'app/user/details.html',
+                controller: 'goals',
+            })
+            .otherwise({redirectTo: '/app'});
     }]);
 })();
